@@ -428,6 +428,43 @@ body {
   padding: 14px 18px 15px;
 }
 
+/* Header bottom */
+
+.header__bottom {
+  background-color: var(--dark-blue);
+}
+
+.menu__catalog {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  color: var(--white);
+  line-height: 1.6;
+}
+
+.menu__catalog-item {
+  flex-grow: 1;
+  border-right: 1px solid rgba(217, 217, 217, 0.2);
+}
+
+.menu__catalog-item:last-child {
+  border-right: none;
+}
+
+.menu__catalog-item a {
+  display: block;
+  padding: 17.5px 0 17.5px;
+  text-align: center;
+  transition: background-color 300ms;
+}
+
+.menu__catalog-item:hover a,
+.menu__catalog-item:focus a {
+  background-color: #1c3750;
+}
+
 .webp .header__policy-link::before{ background-image: url(../img/icons/Person.webp); }
 
 .webp .address::before{ background-image: url(../img/icons/Region.webp); }
