@@ -56,6 +56,8 @@ img {
 
 /* Mixins */
 
+/* Эффекты */
+
 /* Контейнеры */
 
 .container {
@@ -73,7 +75,23 @@ img {
 
 .columns {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Переменные */
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --light-blue: #3c80d2;
+  --dark-blue: #214261;
+  --gray-bg: #F9F9F9;
+  --gray-light-font: #f5f5f5;
+  --gray-dark-font: #4B5A69;
+  --sm-fs: 12px;
+  --regular-fs: 16px;
+  --h1-fs: 48px;
+  --h2-fs: 36px;
 }
 
 /* Helvetica */
@@ -143,19 +161,184 @@ img {
   font-style: normal;
 }
 
+/* Глобальные значения */
+
+body {
+  font-size: var(--regular-fs);
+}
+
 /* Sections */
 
 /* Header */
 
+.header__top-wrapper {
+  min-height: 57px;
+  padding: 13.5px 0 7.5px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
 /* Header top */
 
 .header__top {
-  min-height: 57px;
-  border-bottom: 1px solid #D9D9D9;
-  padding: 13.5px 0 7.5px;
+  font-size: var(--sm-fs);
+  font-weight: 300;
 }
 
-.header__top-column-3 {
-  display: grid;
-  background-color: red;
+.header__top .column:not(:last-child) {
+  margin-right: 70px;
 }
+
+.header__top .column:last-child {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 35px;
+  column-gap: 35px;
+  row-gap: 15px;
+  font-size: var(--sm-fs);
+  max-width: 670px;
+}
+
+.menu-item a {
+  -webkit-text-decoration: underline rgba(255, 255, 255, 0);
+  text-decoration: underline rgba(255, 255, 255, 0);
+  transition: -webkit-text-decoration 300ms;
+  transition: text-decoration 300ms;
+  transition: text-decoration 300ms, -webkit-text-decoration 300ms;
+}
+
+.menu-item a:hover {
+  text-decoration-color: var(--gray-dark-font);
+}
+
+.menu-item a:focus {
+  text-decoration-color: var(--gray-dark-font);
+}
+
+.header__policy-link {
+  padding: 10px;
+  padding-left: 15px;
+  background-color: #e9e9e9;
+  transition: background-color 300ms;
+  border-radius: 7px;
+  display: flex;
+  font-weight: 500;
+  color: var(--gray-dark-font);
+}
+
+.header__policy-link:hover {
+  background-color: #e0e0e0;
+}
+
+.no-webp .header__policy-link::before{
+  background-image: url("../img/icons/Person.png"); }
+
+.header__policy-link::before {
+  content: "";
+  width: 15px;
+  height: 14px;
+  flex-shrink: 0;
+  margin-right: 3px;
+}
+
+.address {
+  display: flex;
+}
+
+.address__link {
+  margin-left: 8px;
+  font-weight: 500;
+  -webkit-text-decoration: underline rgba(255, 255, 255, 0);
+  text-decoration: underline rgba(255, 255, 255, 0);
+  transition: -webkit-text-decoration 300ms;
+  transition: text-decoration 300ms;
+  transition: text-decoration 300ms, -webkit-text-decoration 300ms;
+  color: var(--gray-dark-font);
+  transition: text-decoration 300ms;
+}
+
+.address__link:hover {
+  text-decoration-color: var(--gray-dark-font);
+}
+
+.address__link:focus {
+  text-decoration-color: var(--gray-dark-font);
+}
+
+.no-webp .address::before{
+  background-image: url("../img/icons/Region.png"); }
+
+.address::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  margin-right: 5px;
+}
+
+/* Header center */
+
+.header__center {
+  padding-top: 35px;
+  padding-bottom: 32px;
+  -moz-column-gap: 27px;
+  column-gap: 27px;
+}
+
+.header__logo a,
+.logo {
+  width: 99px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__slogan.slogan {
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+.site-search {
+  border: 1px solid rgba(75, 90, 105, 0.2);
+  border-radius: 7px;
+  padding: 12px 16px;
+  display: flex;
+}
+
+.site-search__btn-wrapper {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-search__btn {
+  padding: 0;
+}
+
+.site-search__input {
+  font-size: var(--sm-fs);
+  line-height: 183%;
+  color: var(--gray-dark-font);
+  outline: none;
+  width: 100%;
+}
+
+body {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+.webp .header__policy-link::before{ background-image: url(../img/icons/Person.webp); }
+
+.webp .address::before{ background-image: url(../img/icons/Region.webp); }
